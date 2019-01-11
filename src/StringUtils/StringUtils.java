@@ -28,6 +28,68 @@ public class StringUtils
 			System.out.println("Left Pad X: " + leftPad(" Kisses ", 3, "X", false));
 			System.out.println("Right Pad O: " + rightPad(" Hugs ", 3, "O", false));
 			System.out.println("Strip ass from assassin: " + stripLeading("assassin","ass"));
+			System.out.println("Camel case and_Squish : " + camelCaseSquish("Camel Case and Squish"));
+			System.out.println("                          W-3!@23 this way");
+			System.out.println("LettersSpacesDigitsOnly :  = " + LettersSpacesDigitsOnly("W-3!@23 this way"));
+			System.out.println("removeNonDigits         :  = " + removeNonDigits("W-3!@23 this way"));
+			System.out.println("removeDigits            :  = " + removeDigits("W-3!@23 this way"));
+		}
+	
+//	public static String removePunctuation(final String str) 
+//		{ // If you want to remove specific punctuation from a string, it will probably be best to explicitly remove exactly what you want like
+//		 if (str == null || str.length() == 0) 
+//		 	{ return ""; } 
+//		return str.replaceAll("/[.,\/#!$%\^&\*;:{}=\-_`~()]/g","");
+//		}
+	
+	public static String removeDigits(final String str) 
+		{ if (str == null || str.length() == 0) 
+		 	{ return ""; } 
+		return str.replaceAll("\\d+", ""); 
+		}
+	
+	public static String removeNonDigits(final String str) 
+		{ // same as enumValue.replaceAll("[^0-9]","")
+		 if (str == null || str.length() == 0) 
+		 	{ return ""; } 
+		return str.replaceAll("\\D+", ""); 
+		}
+	
+	
+	public static String LettersSpacesDigitsOnly( String src_str )
+		{  // removes everything except words, spaces and digits.
+			
+			if ( src_str == null )
+				return null;
+			
+			return src_str.replaceAll( "[^\\w\\d\\s]", "" ).trim();
+		}
+	
+	public static String camelCaseSquish( String src_str )
+		{   // CamelCases a string and removes spaces
+			// camel case this = CamelCaseThis
+			// removes spaces and underscore
+			
+			boolean upperCase = true;
+			String result = "";
+			
+			for( int k = 0; k < src_str.length(); k++ )
+				{	char c = src_str.charAt( k );
+					
+					if ( c == ' ' )
+						{	upperCase = true;
+							continue;
+						}
+					
+					if ( c == '_' )
+						{ 	c = src_str.charAt( ++k );
+							upperCase = true;
+						}
+					
+					result += ( upperCase ? Character.toUpperCase( c ) : Character.toLowerCase( c ));
+					upperCase = false;
+				}
+			return result;
 		}
 	
 	/**
