@@ -3,16 +3,20 @@ package DateUtils;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 import java.util.Calendar;
 import java.util.Date;
-import java.time.ZoneId;
+
 // import java.util.HashMap;
 
 // import lombok.Data;
 // import lombok.Getter;
 // import lombok.Setter;
+
+// Java 1.8 packages
+// import java.time.LocalDate;
+// import java.time.format.DateTimeFormatter;
+// import java.time.ZoneId;
 
 public class DateUtils 
 {
@@ -97,104 +101,106 @@ public class DateUtils
 //	    }
 
 		
-		public static Calendar StringToCalendar(String StringDate)
-		{
-			// Make sure to set the class dateFormat to the format the is in use for the string date
-			Calendar cal = Calendar.getInstance();
-			StringDate = StringDate.trim();
-
-			try 
-				{
-				LocalDate LD = getCleanDate(StringDate);
-					if (LD != null )
-						{
-						//System.out.println("DateUtils.StringToCalendar parse " + dateFormat.parse(StringDate));
-						// dateFormat = new SimpleDateFormat("MM/dd/yy");
-						// System.out.println("DateUtils.StringToCalendar parse MM/dd/YY " + dateFormat.parse(StringDate));
-						
-						cal.setTime(Date.from(LD.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
-						return cal;
-						}
-//					else
-//						debug("DateUtils.StringToCalendar - error converting string to date:");
-				} 
-			catch (Exception e) 
-				{
-					System.out.println("DateUtils.StringToCalendar - error converting string to date: ");
-					//e.getStackTrace());
-				}
-			return null;
-		}
+//		public static Calendar StringToCalendar(String StringDate)
+//		{
+//			// Make sure to set the class dateFormat to the format the is in use for the string date
+//			Calendar cal = Calendar.getInstance();
+//			StringDate = StringDate.trim();
+//
+//			try 
+//				{
+//				LocalDate LD = getCleanDate(StringDate);
+//					if (LD != null )
+//						{
+//						//System.out.println("DateUtils.StringToCalendar parse " + dateFormat.parse(StringDate));
+//						// dateFormat = new SimpleDateFormat("MM/dd/yy");
+//						// System.out.println("DateUtils.StringToCalendar parse MM/dd/YY " + dateFormat.parse(StringDate));
+//						
+//						cal.setTime(Date.from(LD.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+//						return cal;
+//						}
+////					else
+////						debug("DateUtils.StringToCalendar - error converting string to date:");
+//				} 
+//			catch (Exception e) 
+//				{
+//					System.out.println("DateUtils.StringToCalendar - error converting string to date: ");
+//					//e.getStackTrace());
+//				}
+//			return null;
+//		}
 		
-		private static LocalDate getCleanDate(String date)
-		{
-			DateTimeFormatter a = DateTimeFormatter.ofPattern("MM/dd/yyyy h;mm"), //06/20/2018 1;00
-							  b = DateTimeFormatter.ofPattern("MM/dd/yyyy hh;mm"), //06/20/2018 10;00
-							  c = DateTimeFormatter.ofPattern("MM/dd/yyyy"), //06/20/2018 10;00
-						      d = DateTimeFormatter.ofPattern("MM/dd/yyyy"),
-						      e = DateTimeFormatter.ofPattern("MM/dd/yy"),
-						      f = DateTimeFormatter.ofPattern("M/dd/yy"),
-						      g = DateTimeFormatter.ofPattern("M/d/yy");
-			
-			LocalDate cleanDate = LocalDate.parse("01/01/2100 12;00", a);
-			
-			if( date != null && date.isEmpty() == false )
-			{
-				try
-				{
-					date = date.replace(" @ ", "");
-					cleanDate = LocalDate.parse(date, a);
-				}
-				catch( Exception ex )
-				{
-					try
-					{
-						cleanDate = LocalDate.parse(date,  b);
-					}
-					catch( Exception ex2 )
-					{	
-						try
-						{
-							cleanDate = LocalDate.parse(date,  c);
-						}
-						catch( Exception ex3 )
-						{
-							try
-							{
-								cleanDate = LocalDate.parse(date,  d);
-							}
-							catch( Exception ex4 )
-							{	
-								try
-								{
-									cleanDate = LocalDate.parse(date,  e);
-								}
-								catch( Exception ex5 )
-								{	
-									try
-									{
-										cleanDate = LocalDate.parse(date,  f);
-									}
-									catch( Exception ex6 )
-									{			
-										try
-										{
-											cleanDate = LocalDate.parse(date,  g);
-										}
-										catch( Exception ex7 )
-										{	
-											return null;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			
-			return cleanDate;
-		}
+		
+		
+//		private static LocalDate getCleanDate(String date)
+//		{
+//			DateTimeFormatter a = DateTimeFormatter.ofPattern("MM/dd/yyyy h;mm"), //06/20/2018 1;00
+//							  b = DateTimeFormatter.ofPattern("MM/dd/yyyy hh;mm"), //06/20/2018 10;00
+//							  c = DateTimeFormatter.ofPattern("MM/dd/yyyy"), //06/20/2018 10;00
+//						      d = DateTimeFormatter.ofPattern("MM/dd/yyyy"),
+//						      e = DateTimeFormatter.ofPattern("MM/dd/yy"),
+//						      f = DateTimeFormatter.ofPattern("M/dd/yy"),
+//						      g = DateTimeFormatter.ofPattern("M/d/yy");
+//			
+//			LocalDate cleanDate = LocalDate.parse("01/01/2100 12;00", a);
+//			
+//			if( date != null && date.isEmpty() == false )
+//			{
+//				try
+//				{
+//					date = date.replace(" @ ", "");
+//					cleanDate = LocalDate.parse(date, a);
+//				}
+//				catch( Exception ex )
+//				{
+//					try
+//					{
+//						cleanDate = LocalDate.parse(date,  b);
+//					}
+//					catch( Exception ex2 )
+//					{	
+//						try
+//						{
+//							cleanDate = LocalDate.parse(date,  c);
+//						}
+//						catch( Exception ex3 )
+//						{
+//							try
+//							{
+//								cleanDate = LocalDate.parse(date,  d);
+//							}
+//							catch( Exception ex4 )
+//							{	
+//								try
+//								{
+//									cleanDate = LocalDate.parse(date,  e);
+//								}
+//								catch( Exception ex5 )
+//								{	
+//									try
+//									{
+//										cleanDate = LocalDate.parse(date,  f);
+//									}
+//									catch( Exception ex6 )
+//									{			
+//										try
+//										{
+//											cleanDate = LocalDate.parse(date,  g);
+//										}
+//										catch( Exception ex7 )
+//										{	
+//											return null;
+//										}
+//									}
+//								}
+//							}
+//						}
+//					}
+//				}
+//			}
+//			
+//			return cleanDate;
+//		}
 		
 		
 		public static DateFormat setDateFormat(String dtFormat)
