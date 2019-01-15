@@ -1,15 +1,17 @@
-package Locale;
+package LocaleUtils;
 
 import java.util.TreeMap;
-import java.util.Map.Entry;
 
-import com.sun.xml.internal.ws.util.StringUtils;
+import StringUtils.StringUtils;
+
+import java.util.Map.Entry;
 
 import java.util.Locale;
 
 
 public class LocaleKeeper
 	{
+		// Still under construction and testing
 		// A class to display Locales to the console, with minimal dependencies on other classes
 		// TreeMap is used for automatic sorting
 		
@@ -54,7 +56,7 @@ public class LocaleKeeper
 		
 		public static String getCodeFromLocale(String Locale_str)
 			{
-			Locale_str = StringUtils.capitalize(Locale_str);
+			Locale_str = StringUtils.toTitleCase(Locale_str);
 			return countriesToCode.get(Locale_str);
 			}
 		/* -------------------------------- End Getters & Setters  -------------------------------- */
