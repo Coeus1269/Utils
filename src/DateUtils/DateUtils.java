@@ -3,7 +3,6 @@ package DateUtils;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import java.util.Calendar;
 import java.util.Date;
 
@@ -51,8 +50,9 @@ public class DateUtils
 		{ return nYearsAgo(cal,YearsAgo_int);	}
 	
 	public static Calendar nYearsAgo(Calendar myCal, int YearsAgo_int)
-		{ myCal.add(Calendar.YEAR, (-1*YearsAgo_int));
-          return myCal;
+		{ Calendar Tempcal = (Calendar) myCal.clone();
+		Tempcal.add(Calendar.YEAR, (-1*YearsAgo_int));
+          return Tempcal;
 		}
 	
 	
@@ -60,8 +60,9 @@ public class DateUtils
 		{ return nMonthsAgo(cal,MonthsAgo_int); }
 	
 	public static Calendar nMonthsAgo(Calendar myCal, int MonthsAgo_int)
-		{ myCal.add(Calendar.MONTH, (-1*MonthsAgo_int));
-          return myCal;
+		{ Calendar Tempcal = (Calendar) myCal.clone();
+		Tempcal.add(Calendar.MONTH, (-1*MonthsAgo_int));
+          return Tempcal;
 		}
 	
 
@@ -282,7 +283,4 @@ public class DateUtils
 			
 			return null;
 		}
-
-
 }
-
