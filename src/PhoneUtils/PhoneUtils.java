@@ -95,7 +95,7 @@ public class PhoneUtils
 		    	
 		    	PN = unFormatPhoneNumber(PN);
 		    	
-		        // confirms valid 10 digit number
+		        // confirms valid 7 digit number
 		    	bValid = PN.matches("^\\d{7}$");
 		    	}
 			
@@ -115,7 +115,7 @@ public class PhoneUtils
 
    public static String FormatPhoneNumber( String PhoneNumber )
 	{
-	   // when given 19167228982 results in 1 (916) 722-8982
+	   // when given 19188675309 results in 1 (918) 867-5309
 	   int StartPos=0;
 	   
 		StringBuffer s = new StringBuffer();
@@ -186,7 +186,7 @@ public static String getNXX(String PhoneNumber)
    	if (PN_str.length()==10)	// area code + 7 digit number
    		return ( PhoneNumber + "   " ).substring( 3, 6 );
    	
-   	if (PN_str.length()==7)	// area code + 7 digit number
+   	if (PN_str.length()==7)		//  7 digit number
    		return ( PhoneNumber + "   " ).substring( 0, 3 );
    	else
    		return "";
@@ -197,6 +197,12 @@ public static boolean is700Number(String PhoneNumber)
 	{
 	    String npa = getNPA(PhoneNumber);
 	    return "700".equals( npa );
+	}
+
+public static boolean is800Number(String PhoneNumber)
+	{
+	    String npa = getNPA(PhoneNumber);
+	    return "800".equals( npa );
 	}
 
 public static boolean is900Number(String PhoneNumber)
