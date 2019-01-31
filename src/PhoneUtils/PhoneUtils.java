@@ -5,6 +5,8 @@ import StringUtils.StringUtils;
 public class PhoneUtils
 {
 	
+	public String Version_str = "1.230";
+	
   public static void main(String[] args) 
 	{
 	  // Self Tester

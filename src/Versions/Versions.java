@@ -2,6 +2,8 @@ package Versions;
 
 public class Versions 
 {// Display the versions of various packages
+	
+	public String Version_str = "1.230";
 
 	public static void main(String[] args) 
 	{

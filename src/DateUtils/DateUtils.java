@@ -19,6 +19,8 @@ import java.util.Date;
 
 public class DateUtils 
 {
+	public String Version_str = "1.230";
+	
 	private static DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd"); 
 	private static Calendar cal = Calendar.getInstance();
 	// public static final String	DEFAULT_DATETIME_FORMAT	= "yyyy-MM-dd hh:mm",

@@ -14,7 +14,7 @@ import java.net.URLEncoder ;
 
 public class StringUtils
 {
-	String Version_str = "1.230";
+	public String Version_str = "1.230";
 	
 	private StringUtils()
 		{

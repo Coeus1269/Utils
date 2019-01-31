@@ -12,6 +12,8 @@ public class EmailUtils
 	// TODO check for more that one @
 	// test domain type i.e. .com .org etc
 	
+	public String Version_str = "1.230";
+	
 	public static void main(String[] args)
 	{
 		// Email email = new Email("wg@domain.com");

@@ -36,6 +36,8 @@ public class Person
 	enum Races
 		{ Caucasion, Latino, AfricanAmerican, NA;
 		}
+	
+	public String Version_str = "1.230";
 
 	public static void main( String...args )
 		{
