@@ -3,6 +3,8 @@ package NumberUtils;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class NumberUtils 
 {
@@ -17,7 +19,33 @@ public class NumberUtils
 	
 	public static void main(String[] args) 
 		{
-		// TODO Auto-generated method stub
+		// TODO 	String Formatting with locale separators - 
+		//					NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+		//					String numberAsString = numberFormat.format(number);
+
+		// 			Currency Formatting
+
+		
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(23.0123456)));
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(23.01477456)));
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(23.01577456)));
+		
+		
+		double number = 1234567.123456;
+	    NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.ITALIAN);
+	    String numberAsString = numberFormat.format(number);
+	    System.out.println(numberAsString);
+	    
+	    numberFormat = NumberFormat.getNumberInstance(Locale.US);
+	    numberAsString = numberFormat.format(number);
+	    System.out.println(numberAsString);
+	    
+	    numberAsString = String.format("%,d", 1234567);
+	    System.out.println(numberAsString);
+	    
+	    DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
+	    numberAsString = decimalFormat.format(number);
+	    System.out.println(numberAsString);
 	
 		}
 	
