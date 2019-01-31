@@ -8,10 +8,6 @@ import java.util.Date;
 
 // import java.util.HashMap;
 
-// import lombok.Data;
-// import lombok.Getter;
-// import lombok.Setter;
-
 // Java 1.8 packages
 // import java.time.LocalDate;
 // import java.time.format.DateTimeFormatter;
@@ -21,8 +17,9 @@ public class DateUtils
 {
 	public String Version_str = "1.230";
 	
-	private static DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd"); 
-	private static Calendar cal = Calendar.getInstance();
+	private static DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
+	private static DateFormat dateTimeFormat = new SimpleDateFormat("YYYY-MM-dd hh:mm");
+	// private static Calendar cal = Calendar.getInstance();
 	// public static final String	DEFAULT_DATETIME_FORMAT	= "yyyy-MM-dd hh:mm",
 	// 								DEFAULT_DATE_FORMAT 	= "yyyy-MM-dd";
 	// private static HashMap<String,String> calendarFormats = new HashMap<String,String>();	
@@ -30,6 +27,7 @@ public class DateUtils
 	public static void main(String[] args) 
 		{ // SELF TESTER
 			
+		Calendar cal = Calendar.getInstance();
 		System.out.println(cal.getTime());
 		System.out.println("2 Years Ago " + DateUtils.nYearsAgo(2).getTime());
 		System.out.println("2 Months Ago " + DateUtils.nMonthsAgo(2).getTime());
@@ -38,8 +36,12 @@ public class DateUtils
 	
 		}
 	
+	/**
+	 * @return Calendar object set to first day of this year
+	 */
 	public static Calendar FirstDayOfThisYear()
 		{   Date myDate = new Date();
+			Calendar cal = Calendar.getInstance();
 			cal.setTime(myDate);
 			
 			cal.set(Calendar.MONTH, 0);
@@ -48,19 +50,38 @@ public class DateUtils
 	        return cal;
 		}	
 	
+	/**
+	 * @param YearsAgo_int
+	 * @return Calendar object set to YearsAgo_int years from today in the past
+	 */
 	public static Calendar nYearsAgo( int YearsAgo_int)
-		{ return nYearsAgo(cal,YearsAgo_int);	}
+		{ Calendar cal = Calendar.getInstance();
+		return nYearsAgo(cal,YearsAgo_int);	}
 	
+	/**
+	 * @param myCal
+	 * @param YearsAgo_int
+	 * @return Calendar object set to YearsAgo_int years from today in the past
+	 */
 	public static Calendar nYearsAgo(Calendar myCal, int YearsAgo_int)
 		{ Calendar Tempcal = (Calendar) myCal.clone();
 		Tempcal.add(Calendar.YEAR, (-1*YearsAgo_int));
           return Tempcal;
 		}
 	
-	
+	/**
+	 * @param MonthsAgo_int
+	 * @return Calendar object set to MonthsAgo_int months from today in the past
+	 */	
 	public static Calendar nMonthsAgo( int MonthsAgo_int)
-		{ return nMonthsAgo(cal,MonthsAgo_int); }
+		{ Calendar cal = Calendar.getInstance();
+		return nMonthsAgo(cal,MonthsAgo_int); }
 	
+	/**
+	 * @param myCal
+	 * @param MonthsAgo_int
+	 * @return Calendar object set to MonthsAgo_int months from today in the past
+	 */
 	public static Calendar nMonthsAgo(Calendar myCal, int MonthsAgo_int)
 		{ Calendar Tempcal = (Calendar) myCal.clone();
 		Tempcal.add(Calendar.MONTH, (-1*MonthsAgo_int));
@@ -70,16 +91,22 @@ public class DateUtils
 
 	/************************************ To Calendar ********************************************************/
 	
-	public static Calendar toCalendar( int year, int month, int day )
+	/**
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @return Calendar object set to the date created from the input variables 
+	 */
+	public static Calendar toCalendar( int Year_int, int Month_int, int Day_int )
 		{
 			Calendar calendar = null ;
 			
 			calendar = Calendar.getInstance();
 			calendar.setTimeInMillis( 0 );
 			
-			calendar.set( Calendar.YEAR, year );
-			calendar.set( Calendar.MONTH, month );
-			calendar.set( Calendar.DATE, day );
+			calendar.set( Calendar.YEAR, Year_int );
+			calendar.set( Calendar.MONTH, Month_int );
+			calendar.set( Calendar.DATE, Day_int );
 			
 			return calendar ;
 		}
