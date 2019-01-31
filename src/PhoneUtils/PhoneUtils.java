@@ -61,7 +61,12 @@ public class PhoneUtils
 	  System.out.println("Is valid NXX        0551212: " + PhoneUtils.isValidNXX("0551212"));
 	}
 
-
+  /**
+   * Remove the leading zeros (0) from the string
+   * 
+   * @param PhoneNumber_str
+   * @return
+   */
    public static String stripLeadingZeros(String PhoneNumber_str)
 		{
 		   PhoneNumber_str = unFormatPhoneNumber(PhoneNumber_str).trim();
@@ -72,14 +77,19 @@ public class PhoneUtils
 			return PhoneNumber_str;
 		}
    
-   
+   /**
+    * Test is string contains a valid 10 digit number
+    * 
+    * @param PN
+    * @return
+    * 
+    * A valid 10 digit Phone Number:
+    *   has 10 numeric digits, no alpha or symbols
+    *   area code or NPA and NXX does not contain <br>
+    *     911, 411 ,611 or a leading zero
+    */
    public static boolean isValid10DigitPhoneNumber(String PN)
 	   {
-	   	// A valid 10 digit Phone Number:
-	   	//  has 10 numeric digits, no alpha or symbols
-	   	// 	area code or NPA does not contain  911, 411 ,611 or a leading zero
-	   	//	the exchange or NXX does not contain  911, 411 ,611 or a leading zero
-
 	   	if (StringUtils.StringNotEmptyAndNotNull(PN)) 
 	    	{
 	    	PN = unFormatPhoneNumber(PN).trim();
@@ -90,12 +100,19 @@ public class PhoneUtils
 	   		return false;
 	   }
  
+   /**
+    * Test is string contains a valid 7 digit number
+    * 
+    * @param PN
+    * @return
+    * 
+    * A valid 7 digit Phone Number:
+    *   has 7 numeric digits, no alpha or symbols
+    *   NXX does not contain <br>
+    *     911, 411 ,611 or a leading zero
+    */
    public static boolean isValid7DigitPhoneNumber(String PN)
 	   {
-	   	// A valid 7 digit Phone Number:
-	   	//  has 7 numeric digits, no alpha or symbols
-	   	//	the exchange or NXX does not contain  911, 411 ,611 or a leading zero
-
 	   	if (StringUtils.StringNotEmptyAndNotNull(PN)) 
 	    	{	    	
 	    	PN = unFormatPhoneNumber(PN).trim();
@@ -106,6 +123,12 @@ public class PhoneUtils
 	   		return false;
 	   }
  
+   /**
+    * Removes everything except digits
+    * 
+    * @param PN
+    * @return
+    */
    public static String unFormatPhoneNumber( String PN )
 		{
 			if ( StringUtils.StringNotEmptyAndNotNull(PN)) 				//phone != null && !"".equals(phone))
@@ -114,10 +137,17 @@ public class PhoneUtils
 				return "";
 		}
 
+   /**
+    * Formats the string to human readable format
+    * 
+    * @param PhoneNumber_str
+    * @return
+    * 
+    * when given 19188675309 
+    * results in 1 (918) 867-5309
+    */
    public static String FormatPhoneNumber( String PhoneNumber_str )
 	{
-	   // when given 19188675309 results in 1 (918) 867-5309
-		
 		if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber_str))
 		{
 			int nxxPos = 0;
@@ -149,15 +179,27 @@ public class PhoneUtils
 		return "";
 	}
 
-   
+   /**
+    * @param PhoneNumber_str
+    * @return number of digits in the string
+    * 
+    * returns length of the unformatted and trimmed string which should only contain the digits
+    */
    public static int length(String PhoneNumber_str)
    	{
+	   PhoneNumber_str = unFormatPhoneNumber(PhoneNumber_str).trim();
        return PhoneNumber_str == null ? 0 : PhoneNumber_str.length();
    	}
 
    
  /* -------------------------------- Getters & Setters  -------------------------------- */
 
+   /**
+    * @param PhoneNumber_str
+    * @return boolean value if is a toll free number
+    * 
+    * String is unformatted before testing
+    */
    public static boolean isTollFreeNPA(String PhoneNumber_str)
 	   { 
 	   String NPA_str = getNPA(unFormatPhoneNumber(PhoneNumber_str));
@@ -172,6 +214,13 @@ public class PhoneUtils
 	   || "822".equals( NPA_str ); 
 	   }
    
+   /**
+    * @param PhoneNumber_str
+    * @return the NPA or area code of the input
+    * 
+    * (NAP)NXX-LINE
+    * String is unformatted before testing
+    */
    public static String getNPA(String PhoneNumber_str)
 	   {   
 	   	String PN_str = unFormatPhoneNumber(PhoneNumber_str).trim();
@@ -185,6 +234,13 @@ public class PhoneUtils
 	   		return "";
 	   }
 
+   /**
+    * @param PhoneNumber_str
+    * @return the NXX of the input
+    * 
+    * (NAP)NXX-LINE
+    * String is unformatted before testing
+    */
 	public static String getNXX(String PhoneNumber_str)
 	   { 
 	   	String PN_str = unFormatPhoneNumber(PhoneNumber_str).trim();
@@ -201,23 +257,39 @@ public class PhoneUtils
 	   		return "";
 	   }
 	
-	
+	/**
+	 * @param PhoneNumber_str
+	 * @return boolean if the input is a 700 NPA number
+	 */
 	public static boolean is700Number(String PhoneNumber_str)
 		{ 
 		 return "700".equals( getNPA(unFormatPhoneNumber(PhoneNumber_str)) );
 		}
 	
+	/**
+	 * @param PhoneNumber_str
+	 * @return boolean if the input is a 800 NPA number
+	 */
 	public static boolean is800Number(String PhoneNumber_str)
 		{
 		return "800".equals( getNPA(unFormatPhoneNumber(PhoneNumber_str)) );
 		}
 	
+	/**
+	 * @param PhoneNumber_str
+	 * @return boolean if the input is a 900 NPA number
+	 */
 	public static boolean is900Number(String PhoneNumber_str)
 		{ 
 		return "900".equals( getNPA(unFormatPhoneNumber(PhoneNumber_str)) );
 		}
 	
-	
+	/**
+	 * @param PhoneNumber_str
+	 * @return boolean if the input is a directory assistance number
+	 * 
+    * String is unformatted before testing
+	 */
 	public static boolean isDirectoryAssist(String PhoneNumber_str)
 		{
 		    if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber_str))
@@ -235,7 +307,13 @@ public class PhoneUtils
 		    return false;
 		}
 	
-	
+	/**
+	 * @param PN_str
+	 * @return boolean if the input has a valid NXX
+	 * 
+	 * (NAP)NXX-LINE
+     * String is unformatted before testing
+	 */
 	public static boolean isValidNXX(String PN_str)
 		{
 		   String NXX_str = PhoneUtils.getNXX(PN_str).trim();
@@ -252,7 +330,13 @@ public class PhoneUtils
 		   return true;	   
 		}
 	
-	
+	/**
+	 * @param PN_str
+	 * @return boolean if the input has a valid NPA
+	 * 
+	 * (NAP)NXX-LINE
+     * String is unformatted before testing
+	 */
 	public static boolean isValidNPA(String PN_str)
 		{
 		   String NPA_str = PhoneUtils.getNPA(PN_str).trim();
@@ -269,7 +353,13 @@ public class PhoneUtils
 		   return true;
 		}
 	
-	
+	/**
+	 * @param PhoneNumber_str
+	 * @return returns then unformatted NPA and NXX of the input
+	 * 
+	 * (NAP)NXX-LINE
+     * String is unformatted before testing
+	 */
 	public String getNpaNxx(String PhoneNumber_str)
 		{
 			String NPA_str = getNPA(PhoneNumber_str),
