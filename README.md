@@ -2,7 +2,7 @@
 Attempt at a combined project of all the utils classes
 
 The sections of this project are STATIC classes that house commonly used methods for formatting and validating various elements.
-It is my belief that each jar/package should contain one area of functionality to provide the most flexibility without having vast amounts of unnecessary code included in each project. Each package is intended to be compiled into a single jar for each class for inclusion in other projects. Part of the overall objective is to have robust functionality with minimum dependancies.
+It is my belief that each jar/package should contain one area of functionality to provide the most flexibility without having vast amounts of unnecessary code included in each project. Each package is intended to be compiled into a single jar for each class for inclusion in other projects. Part of the overall objective is to have robust functionality with minimum dependencies.
 
 String Utils - Collection of string utilities gathered over the years into one location <br>
   Built in Java 1.7 <br>
