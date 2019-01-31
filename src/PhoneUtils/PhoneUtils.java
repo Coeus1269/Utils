@@ -10,43 +10,55 @@ public class PhoneUtils
   public static void main(String[] args) 
 	{
 	  // Self Tester
-	  //PhoneUtils PU = new PhoneUtils();
 	  
-	  System.out.println("NPA of 18005551212: " + PhoneUtils.getNPA("18005551212"));
-	  System.out.println("NPA of  8005551212: " + PhoneUtils.getNPA("8005551212"));
-	  System.out.println("NPA of     5551212: " + PhoneUtils.getNPA("5551212"));
+	  System.out.println("NPA of 1 800 555 1212: " + PhoneUtils.getNPA("1 800 555 1212"));
+	  System.out.println("NPA of 1(800)555-1212: " + PhoneUtils.getNPA("1(800)555-1212"));
+	  System.out.println("NPA of    18005551212: " + PhoneUtils.getNPA("18005551212"));
+	  System.out.println("NPA of     8005551212: " + PhoneUtils.getNPA("8005551212"));
+	  System.out.println("NPA of        5551212: " + PhoneUtils.getNPA("5551212"));
 	  
-	  System.out.println("NXX of 18005551212: " + PhoneUtils.getNXX("18005551212"));
-	  System.out.println("NXX of  8005551212: " + PhoneUtils.getNXX("8005551212"));
-	  System.out.println("NXX of     5551212: " + PhoneUtils.getNXX("5551212"));
+	  System.out.println("\nNXX of 1 800 555 1212: " + PhoneUtils.getNXX("1 800 555 1212"));
+	  System.out.println("NXX of 1(800)555-1212: " + PhoneUtils.getNXX("1(800)555-1212"));
+	  System.out.println("NXX of    18005551212: " + PhoneUtils.getNXX("18005551212"));
+	  System.out.println("NXX of     8005551212: " + PhoneUtils.getNXX("8005551212"));
+	  System.out.println("NXX of        5551212: " + PhoneUtils.getNXX("5551212"));
 	  
-	  System.out.println("is 18005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("18005551212"));
-	  System.out.println("is  8005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("8005551212"));
-	  System.out.println("is     5551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("5551212"));
+	  System.out.println("\nis 1(800)555-1212 Tollfree number? " + PhoneUtils.isTollFreeNPA("1(800)555-1212"));
+	  System.out.println("is    18005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("18005551212"));
+	  System.out.println("is     8005551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("8005551212"));
+	  System.out.println("is        5551212 Tollfree number? " + PhoneUtils.isTollFreeNPA("5551212"));
 	  
-	  System.out.println("Format 18005551212: " + PhoneUtils.FormatPhoneNumber("18005551212"));
-	  System.out.println("Format  8005551212: " + PhoneUtils.FormatPhoneNumber("8005551212"));
-	  System.out.println("Format     5551212: " + PhoneUtils.FormatPhoneNumber("5551212"));
+	  System.out.println("\nFormat 1 800 555 1212: " + PhoneUtils.FormatPhoneNumber("1 800 555 1212"));
+	  System.out.println("Format    18005551212: " + PhoneUtils.FormatPhoneNumber("18005551212"));
+	  System.out.println("Format     8005551212: " + PhoneUtils.FormatPhoneNumber("8005551212"));
+	  System.out.println("Format        5551212: " + PhoneUtils.FormatPhoneNumber("5551212"));
 	  
-	  System.out.println("unFormat 1(800)555-1212: " + PhoneUtils.unFormatPhoneNumber("1(800)555-1212"));
+	  System.out.println("\nunFormat 1(800)555-1212: " + PhoneUtils.unFormatPhoneNumber("1(800)555-1212"));
 	  System.out.println("unFormat  (800)555-1212: " + PhoneUtils.unFormatPhoneNumber("(800)555-1212"));
+	  System.out.println("unFormat   800 555 1212: " + PhoneUtils.unFormatPhoneNumber(" 800 555 1212"));
 	  System.out.println("unFormat       555-1212: " + PhoneUtils.unFormatPhoneNumber("555-1212"));
 	  
-	  System.out.println("Is DA 1(800)5551212: " + PhoneUtils.isDirectoryAssist("1(800)5551212"));
-	  System.out.println("Is DA 18005551212: " + PhoneUtils.isDirectoryAssist("18005551212"));
-	  System.out.println("Is DA  8005551212: " + PhoneUtils.isDirectoryAssist("8005551212"));
-	  System.out.println("Is DA     5551212: " + PhoneUtils.isDirectoryAssist("5551212"));
-	  System.out.println("Is DA     5551212: " + PhoneUtils.isDirectoryAssist("18005561212"));
+	  System.out.println("\nIs DA 1(800)5551212: " + PhoneUtils.isDirectoryAssist("1(800)5551212"));
+	  System.out.println("Is DA   18005551212: " + PhoneUtils.isDirectoryAssist("18005551212"));
+	  System.out.println("Is DA    8005551212: " + PhoneUtils.isDirectoryAssist("8005551212"));
+	  System.out.println("Is DA       5551212: " + PhoneUtils.isDirectoryAssist("5551212"));
+	  System.out.println("Is DA       5561212: " + PhoneUtils.isDirectoryAssist("5561212"));
+	  System.out.println("Is DA       5561411: " + PhoneUtils.isDirectoryAssist("5561411"));
+	  System.out.println("Is DA       5551411: " + PhoneUtils.isDirectoryAssist("5551411"));
+	  System.out.println("Is DA       4119999: " + PhoneUtils.isDirectoryAssist("4119999"));
+	  System.out.println("Is DA           411: " + PhoneUtils.isDirectoryAssist("411"));
 	  
-	  System.out.println("Is valid NPA 18005551212: " + PhoneUtils.isValidNPA("18005551212"));
-	  System.out.println("Is valid NPA  8005551212: " + PhoneUtils.isValidNPA("8005551212"));
-	  System.out.println("Is valid NPA     5551212: " + PhoneUtils.isValidNPA("5551212"));
-	  System.out.println("Is valid NPA  9115551212: " + PhoneUtils.isValidNPA("9115551212"));
+	  System.out.println("\nIs valid NPA 1(800)555-1212: " + PhoneUtils.isValidNPA("1(800)555-1212"));
+	  System.out.println("Is valid NPA    18005551212: " + PhoneUtils.isValidNPA("18005551212"));
+	  System.out.println("Is valid NPA     8005551212: " + PhoneUtils.isValidNPA("8005551212"));
+	  System.out.println("Is valid NPA        5551212: " + PhoneUtils.isValidNPA("5551212"));
+	  System.out.println("Is valid NPA     9115551212: " + PhoneUtils.isValidNPA("9115551212"));
 	  
-	  System.out.println("Is valid NXX 18005551212: " + PhoneUtils.isValidNXX("18005551212"));
-	  System.out.println("Is valid NXX  8005551212: " + PhoneUtils.isValidNXX("8005551212"));
-	  System.out.println("Is valid NXX     5551212: " + PhoneUtils.isValidNXX("5551212"));
-	  System.out.println("Is valid NXX     0551212: " + PhoneUtils.isValidNXX("0551212"));
+	  System.out.println("\nIs valid NXX 1(800)555-1212: " + PhoneUtils.isValidNXX("1(800)555-1212"));
+	  System.out.println("Is valid NXX    18005551212: " + PhoneUtils.isValidNXX("18005551212"));
+	  System.out.println("Is valid NXX     8005551212: " + PhoneUtils.isValidNXX("8005551212"));
+	  System.out.println("Is valid NXX        5551212: " + PhoneUtils.isValidNXX("5551212"));
+	  System.out.println("Is valid NXX        0551212: " + PhoneUtils.isValidNXX("0551212"));
 	}
 
 
@@ -165,10 +177,10 @@ public class PhoneUtils
 	   	String PN_str = unFormatPhoneNumber(PhoneNumber_str).trim();
 	   	
 	   	if (PN_str.length()==11)	
-	   		return ( PhoneNumber_str + "   " ).substring( 1, 4 );
+	   		return ( PN_str + "   " ).substring( 1, 4 );
 	   	
 	   	if (PN_str.length()==10)	// area code + 7 digit number
-	   		return ( PhoneNumber_str + "   " ).substring( 0, 3 );
+	   		return ( PN_str + "   " ).substring( 0, 3 );
 	   	else
 	   		return "";
 	   }
@@ -178,13 +190,13 @@ public class PhoneUtils
 	   	String PN_str = unFormatPhoneNumber(PhoneNumber_str).trim();
 	   	
 	   	if (PN_str.length()==11)	
-	   		return ( PhoneNumber_str + "   " ).substring( 4, 7 );
+	   		return ( PN_str + "   " ).substring( 4, 7 );
 	   	
 	   	if (PN_str.length()==10)	// area code + 7 digit number
-	   		return ( PhoneNumber_str + "   " ).substring( 3, 6 );
+	   		return ( PN_str + "   " ).substring( 3, 6 );
 	   	
 	   	if (PN_str.length()==7)		//  7 digit number
-	   		return ( PhoneNumber_str + "   " ).substring( 0, 3 );
+	   		return ( PN_str + "   " ).substring( 0, 3 );
 	   	else
 	   		return "";
 	   }
@@ -226,15 +238,15 @@ public class PhoneUtils
 	
 	public static boolean isValidNXX(String PN_str)
 		{
-		   String nxx = PhoneUtils.getNXX(PN_str).trim();
+		   String NXX_str = PhoneUtils.getNXX(PN_str).trim();
 		   
-		   if(nxx.length() < 3)
+		   if(NXX_str.length() < 3)
 			   return false;
 		   
-		   if ( nxx.indexOf("0") == 0 || nxx.indexOf("1") == 0)					// NPXs do not permit the digits 0 and 1 as the leading digit
+		   if ( NXX_str.indexOf("0") == 0 || NXX_str.indexOf("1") == 0)					// NPXs do not permit the digits 0 and 1 as the leading digit
 			   return false; 											
 		   
-		   if (nxx.equals("911")  || nxx.equals("411") || nxx.equals("611"))	// Reserved services numbers
+		   if (NXX_str.equals("911")  || NXX_str.equals("411") || NXX_str.equals("611"))	// Reserved services numbers
 			   return false;		
 	
 		   return true;	   
@@ -243,15 +255,15 @@ public class PhoneUtils
 	
 	public static boolean isValidNPA(String PN_str)
 		{
-		   String npa = PhoneUtils.getNPA(PN_str).trim();
+		   String NPA_str = PhoneUtils.getNPA(PN_str).trim();
 		   
-		   if(npa.length() < 3)
+		   if(NPA_str.length() < 3)
 			   return false;
 			   
-		   if ( npa.indexOf("0") == 0 || npa.indexOf("1") == 0)					// NPAs do not permit the digits 0 and 1 as the leading digit of an area code
+		   if ( NPA_str.indexOf("0") == 0 || NPA_str.indexOf("1") == 0)					// NPAs do not permit the digits 0 and 1 as the leading digit of an area code
 			   return false; 			
 		   
-		   if (npa.equals("911") || npa.equals("411") || npa.equals("611"))		// Reserved services numbers
+		   if (NPA_str.equals("911") || NPA_str.equals("411") || NPA_str.equals("611"))		// Reserved services numbers
 			   return false;			
 		   
 		   return true;
