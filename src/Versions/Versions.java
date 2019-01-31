@@ -7,14 +7,14 @@ public class Versions
 	{
 	// hibernate
 	try {
-        String hibernateVersion = org.hibernate.annotations.common.Version.VERSION;
-        System.out.println("Hibernate common Version: "+ hibernateVersion);
-        
-        hibernateVersion = org.hibernate.validator.Version.VERSION;
-        System.out.println("Hibernate validator Version: "+ hibernateVersion);
-        
-        hibernateVersion = org.hibernate.ejb.Version.VERSION;
-        System.out.println("Hibernate ejb Version: "+ hibernateVersion);
+//        String hibernateVersion = org.hibernate.annotations.common.Version.VERSION;
+//        System.out.println("Hibernate common Version: "+ hibernateVersion);
+//        
+//        hibernateVersion = org.hibernate.validator.Version.VERSION;
+//        System.out.println("Hibernate validator Version: "+ hibernateVersion);
+//        
+//        hibernateVersion = org.hibernate.ejb.Version.VERSION;
+//        System.out.println("Hibernate ejb Version: "+ hibernateVersion);
 
     	} 
 	catch (Exception e) 

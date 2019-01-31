@@ -249,6 +249,25 @@ public class DateUtils
 //		{
 //			return ( source == null ? null : fromString( source, ( source.indexOf( ':' ) == -1 ? DEFAULT_DATE_FORMAT : DEFAULT_DATETIME_FORMAT ) ) );
 //		}
+	
+	public static String dateToString(java.sql.Timestamp Date_dtm)
+		{
+		java.util.Date date = new Date( Date_dtm.getTime() );
+		return dateToString(date);
+		}
+		
+	public static String dateToString(java.util.Date Date_dtm)
+		{
+		if( Date_dtm == null )
+			{ return ""; }
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return formatter.format(Date_dtm);
+		}
+	
+
+
+
 
 	public static Calendar fromString( String source, String format )
 		{

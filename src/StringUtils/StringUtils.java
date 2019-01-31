@@ -173,8 +173,8 @@ public class StringUtils
 	 * @param StartsWithString
 	 * @return boolean return if StringToCheck starts with StartsWithString
 	 */
-	public static boolean startsWith( String StringToCheck, String StartsWithString )
-		{ return StringToCheck == null ? false : StringToCheck.startsWith( StartsWithString );
+	public static boolean startsWith( String StringToCheck_str, String StartsWithString_str )
+		{ return StringToCheck_str == null ? false : StringToCheck_str.startsWith( StartsWithString_str );
 		}
 
 	/**
@@ -313,6 +313,33 @@ public class StringUtils
 
 			return Value_str;
 		}
+	
+	
+	public static Float stringToPercent(String percentInput_str)  // throws TransactionException
+	{
+		Float percent_flt = null;
+
+		try{
+			String cleaned_str = percentInput_str.replaceAll("\\D|^[\\.]","");
+			
+			percent_flt = ( Float.valueOf( cleaned_str ) / 100 );
+			
+			}
+		catch(Exception e)
+			{
+				// throw new TransactionException("Invalid percent format");
+			}
+		
+		return percent_flt;
+	}
+
+	
+	// scrubs a string and replaces any tabs or newlines with spaces, making the value safe for tab delimited output
+	public static String scrubForTabs(String String_str)
+		{
+		return String_str.replaceAll("\t"," ").replaceAll("\n"," ").replaceAll("\r"," ");
+		}
+
 
 	
 	/* -------------------------------- Getters & Setters  -------------------------------- */

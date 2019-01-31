@@ -46,14 +46,14 @@ public class PhoneUtils
 	}
 
 
-   public static String stripLeadingZeros(String PhoneNumber)
+   public static String stripLeadingZeros(String PhoneNumber_str)
 		{
-		   PhoneNumber = PhoneNumber.trim();
+		   PhoneNumber_str = PhoneNumber_str.trim();
 		   
-			while( PhoneNumber.startsWith( "0" ))
-				PhoneNumber = PhoneNumber.substring( 1 );
+			while( PhoneNumber_str.startsWith( "0" ))
+				PhoneNumber_str = PhoneNumber_str.substring( 1 );
 			
-			return PhoneNumber;
+			return PhoneNumber_str;
 		}
    
    
@@ -113,46 +113,51 @@ public class PhoneUtils
 			return PN;
 		}
 
-   public static String FormatPhoneNumber( String PhoneNumber )
+   public static String FormatPhoneNumber( String PhoneNumber_str )
 	{
 	   // when given 19188675309 results in 1 (918) 867-5309
 	   int StartPos=0;
 	   
 		StringBuffer s = new StringBuffer();
 
-		PhoneNumber = PhoneNumber.trim() ;
-		PhoneNumber = unFormatPhoneNumber(PhoneNumber);
+		PhoneNumber_str = PhoneNumber_str.trim() ;
+		PhoneNumber_str = unFormatPhoneNumber(PhoneNumber_str);
 		
-		if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber))
+		if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber_str))
 		{
 			int nxxPos = 0;
 
-			if( PhoneNumber.length() == 11 )
+			if( PhoneNumber_str.length() == 11 )
 				{
 				StartPos = 1;
-				s.append( PhoneNumber.substring( 0, 1 ) + " ");
+				s.append( PhoneNumber_str.substring( 0, 1 ) + " ");
 				}
 			
-			if( PhoneNumber.length() > 9 )
+			if( PhoneNumber_str.length() > 9 )
 				{
 				nxxPos = StartPos + 3;
-				s.append( "(" + PhoneNumber.substring( StartPos, nxxPos ) + ") ");
+				s.append( "(" + PhoneNumber_str.substring( StartPos, nxxPos ) + ") ");
 				}
 			
-			s.append( PhoneNumber.substring( nxxPos, nxxPos + 3 ))
+			s.append( PhoneNumber_str.substring( nxxPos, nxxPos + 3 ))
 				.append( "-" )
-				.append( PhoneNumber.substring( nxxPos + 3 ));
+				.append( PhoneNumber_str.substring( nxxPos + 3 ));
 		}
 
 		return s.toString();
 	}
 
+   public static int length(String PhoneNumber_str)
+   	{
+       return PhoneNumber_str == null ? 0 : PhoneNumber_str.length();
+   	}
+
    
  /* -------------------------------- Getters & Setters  -------------------------------- */
 
-   public static boolean isTollFreeNPA(String PhoneNumber)
+   public static boolean isTollFreeNPA(String PhoneNumber_str)
 	   {
-	   String npa = getNPA(PhoneNumber);
+	   String npa = getNPA(PhoneNumber_str);
 	
 	   return "800".equals( npa )
 	   || "888".equals( npa )
@@ -163,65 +168,65 @@ public class PhoneUtils
 	   || "833".equals( npa );
 	   }
    
-   public static String getNPA(String PhoneNumber)
+   public static String getNPA(String PhoneNumber_str)
    {
-   	String PN_str = PhoneNumber.trim();
+   	String PN_str = PhoneNumber_str.trim();
    	
    	if (PN_str.length()==11)	
-   		return ( PhoneNumber + "   " ).substring( 1, 4 );
+   		return ( PhoneNumber_str + "   " ).substring( 1, 4 );
    	
    	if (PN_str.length()==10)	// area code + 7 digit number
-   		return ( PhoneNumber + "   " ).substring( 0, 3 );
+   		return ( PhoneNumber_str + "   " ).substring( 0, 3 );
    	else
    		return "";
    }
 
-public static String getNXX(String PhoneNumber)
+public static String getNXX(String PhoneNumber_str)
    {
-   	String PN_str = PhoneNumber.trim();
+   	String PN_str = PhoneNumber_str.trim();
    	
    	if (PN_str.length()==11)	
-   		return ( PhoneNumber + "   " ).substring( 4, 7 );
+   		return ( PhoneNumber_str + "   " ).substring( 4, 7 );
    	
    	if (PN_str.length()==10)	// area code + 7 digit number
-   		return ( PhoneNumber + "   " ).substring( 3, 6 );
+   		return ( PhoneNumber_str + "   " ).substring( 3, 6 );
    	
    	if (PN_str.length()==7)		//  7 digit number
-   		return ( PhoneNumber + "   " ).substring( 0, 3 );
+   		return ( PhoneNumber_str + "   " ).substring( 0, 3 );
    	else
    		return "";
    }
 
 
-public static boolean is700Number(String PhoneNumber)
+public static boolean is700Number(String PhoneNumber_str)
 	{
-	    String npa = getNPA(PhoneNumber);
+	    String npa = getNPA(PhoneNumber_str);
 	    return "700".equals( npa );
 	}
 
-public static boolean is800Number(String PhoneNumber)
+public static boolean is800Number(String PhoneNumber_str)
 	{
-	    String npa = getNPA(PhoneNumber);
+	    String npa = getNPA(PhoneNumber_str);
 	    return "800".equals( npa );
 	}
 
-public static boolean is900Number(String PhoneNumber)
+public static boolean is900Number(String PhoneNumber_str)
 	{
-	    String npa = getNPA(PhoneNumber);
+	    String npa = getNPA(PhoneNumber_str);
 	    return "900".equals( npa );
 	}
 
 
-public static boolean isDirectoryAssist(String PhoneNumber)
+public static boolean isDirectoryAssist(String PhoneNumber_str)
 	{
-	    if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber))
+	    if ( StringUtils.StringNotEmptyAndNotNull(PhoneNumber_str))
 	    		{
-	 	   if (PhoneNumber.length()==11)
-	 		   return ( PhoneNumber.indexOf( "555121" ) == 4 );
-	 	   if (PhoneNumber.length()==10)
-	 		   return ( PhoneNumber.indexOf( "555121" ) == 3 );
+	 	   if (PhoneNumber_str.length()==11)
+	 		   return ( PhoneNumber_str.indexOf( "555121" ) == 4 );
+	 	   if (PhoneNumber_str.length()==10)
+	 		   return ( PhoneNumber_str.indexOf( "555121" ) == 3 );
 	 	   else
-	 		   return ( PhoneNumber.indexOf( "555121" ) == 0 );
+	 		   return ( PhoneNumber_str.indexOf( "555121" ) == 0 );
 	    	}
 	    
 	    return false;
@@ -261,10 +266,10 @@ public static boolean isValidNPA(String PN_str)
 		   return true;
 	}
 
-public String getNpaNxx(String PhoneNumber)
+public String getNpaNxx(String PhoneNumber_str)
 	{
-		String npa = getNPA(PhoneNumber),
-			   nxx = getNXX(PhoneNumber);
+		String npa = getNPA(PhoneNumber_str),
+			   nxx = getNXX(PhoneNumber_str);
 
 		if ( npa == null )
 			npa = "   ";
