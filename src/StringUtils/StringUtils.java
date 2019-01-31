@@ -55,7 +55,7 @@ public class StringUtils
 	/**
 	 * Removes everything except digits
 	 * 
-	 * @param String value_str
+	 * @param value_str
 	 * @return returns empty string if input is null
 	 */
 	public static String removeNonDigits(String value_str) 
@@ -68,7 +68,7 @@ public class StringUtils
 	/**
 	 * removes everything in a string except characters, spaces and digits.
 	 * 
-	 * @param String value_str
+	 * @param value_str
 	 * @return Original string containing only characters, spaces and digits.
 	 */
 	public static String LettersSpacesDigitsOnly( String value_str )
@@ -110,7 +110,7 @@ public class StringUtils
 		}
 	
 	/**
-	 * @param String value_str
+	 * @param value_str
 	 * @return if value_str = null or empty returns - null else returns value_str trimmed
 	 */
 	public static String safeTrimNull( String value_str )
@@ -126,7 +126,7 @@ public class StringUtils
 	   }
 	
 	/**
-	 * @param String value_str
+	 * @param value_str
 	 * @return if value_str = null or empty returns empty string else - returns value_str trimmed
 	 */
 	public static String safeTrimEmpty( String value_str )
@@ -135,7 +135,7 @@ public class StringUtils
 		}
 	
 	/**
-	 * @param String value_str
+	 * @param value_str
 	 * @return if value_str = null or empty string or spaces only string - returns true
 	 */
 	public static boolean isEmptyString(String value_str)
@@ -145,11 +145,13 @@ public class StringUtils
 		}
 
 	/**
-	 * @param String value_str		- the string to pad
-	 * @param int length_int		- the length of the padding
-	 * @param String  pad_str		- the padding string
-	 * @param Boolean doTrim_bln	- trim the spaces or not
-	 * @return						- value_str left padded(pad_str X length_int) + value_str characters
+	 * @param value_str		- the string to pad
+	 * @param length_int	- the length of the padding
+	 * @param pad_str		- the padding string
+	 * @param doTrim_bln	- boolean trim the spaces or not
+	 * @return				- value_str left padded(pad_str X length_int) + value_str characters
+	 * 
+	 * Example: leftPad( " Hi There ", 2, "-", false) = -- Hi There
 	 */
 	public static String leftPad( String value_str, int length_int, String pad_str, boolean doTrim_bln)
 		{ if ( value_str != null)
@@ -163,11 +165,13 @@ public class StringUtils
 		}
 	
 	/**
-	 * @param String value_str		- the string to pad
-	 * @param int length_int		- the length of the padding
-	 * @param String  pad_str		- the padding string
-	 * @param Boolean doTrim_bln	- trim the spaces or not
-	 * @return						- value_str right padded(pad_str X length_int) + value_str characters
+	 * @param value_str		- the string to pad
+	 * @param length_int	- the length of the padding
+	 * @param pad_str		- the padding string
+	 * @param doTrim_bln	- trim the spaces or not
+	 * @return				- value_str right padded(pad_str X length_int) + value_str characters
+	 * 
+	 * Example: rightPad( " Hi There ", 2, "-", false) = Hi There -- 
 	 */
 	public static String rightPad( String value_str, int length_int, String pad_str, boolean doTrim_bln)
 		{ if ( value_str != null)
@@ -181,8 +185,8 @@ public class StringUtils
 		}
 	
 	/**
-	 * @param String StringToCheck_str
-	 * @param String StartsWithString_str
+	 * @param StringToCheck_str
+	 * @param StartsWithString_str
 	 * @return boolean return if StringToCheck_str starts with StartsWithString_str
 	 */
 	public static boolean startsWith( String StringToCheck_str, String StartsWithString_str )
@@ -289,7 +293,7 @@ public class StringUtils
 	/**
 	 *  Converts a string to Title Case
 	 * 
-	 * @param String String_str
+	 * @param String_str
 	 * @return string converted to title case i.e. tiTle cASE = Title Case
 	 * 
 	 * credit to scottb on https://stackoverflow.com/questions/1086123/string-conversion-to-title-case
@@ -315,9 +319,9 @@ public class StringUtils
 	
 	
 	/**
-	 * @param String Value_str 		- the string to process
-	 * @param String ToStrip_str 	- string to remove
-	 * @return String ToStrip_str from the front of Value_str
+	 * @param Value_str 	- the string to process
+	 * @param ToStrip_str 	- string to remove
+	 * @return String ToStrip_str removed from the front of Value_str
 	 */
 	public static String stripLeading(String Value_str, String ToStrip_str)
 		{while( Value_str.startsWith( ToStrip_str ))
@@ -328,7 +332,8 @@ public class StringUtils
 	
 	/**
 	 * Converts a string to a float
-	 * @param String percentInput_str
+	 * 
+	 * @param percentInput_str
 	 * @return string converted to a float
 	 */
 	public static Float stringToPercent(String percentInput_str)  // throws TransactionException
@@ -352,7 +357,7 @@ public class StringUtils
 	/**
 	 * scrubs a string and replaces any tabs or newlines with spaces, making the value safe for tab delimited output
 	 * 
-	 * @param String String_str
+	 * @param String_str
 	 * @return String
 	 */
 	public static String scrubForTabs(String String_str)
