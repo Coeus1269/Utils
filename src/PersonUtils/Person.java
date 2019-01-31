@@ -9,25 +9,25 @@ import StringUtils.StringUtils;
 
 public class Person 
 {
-	private int personID;			// unique ID for this person
+	// TODO: maybe an attributes class for hair color, eye color etc.?
+	// TODO: when returning enum variables, should it return the string?
+	private int personID;					// unique ID for this person
 	private String firstName = "";
 	private String middleName = "";
 	private String lastName = "";
 	private String userName = "";
 	private String email = "";
-	// private Email email;
-	// private Phone Phone;
-	// private US_Address Address;
 	private boolean internationalAddress = false;
-	// private InternationalAddress IntAddress;
 	private String SSN = "";				// Social Security Number
 	
 	//optional
 	private Date dOB;
 	private Integer weight;
-	private Integer heightInINches;
-	private Races Race = Races.NA;
+	private Integer heightInInches;
+	private Races race = Races.NA;
 	private Genders gender = Genders.NA;
+	private EyeColors eyeColor = EyeColors.NA;
+	private HairColors hairColor = HairColors.NA;
 	
 	enum Genders
 		{ Male, Female, NA;
@@ -35,6 +35,16 @@ public class Person
 	
 	enum Races
 		{ Caucasion, Latino, AfricanAmerican, NA;
+		}
+	
+	enum EyeColors
+		{
+		Green, Blue, Hazel, Brown, NA;
+		}
+	
+	enum HairColors
+		{
+		Brown, Blond, Red, NA;	
 		}
 	
 	public String Version_str = "1.230";
@@ -147,23 +157,35 @@ public class Person
 	public void setWeight(Integer weight)
 		{ this.weight = weight;	}
 
-	public Integer getHeightInINches( )
-		{ return heightInINches; }
+	public Integer getHeightInInches( )
+		{ return heightInInches; }
 
-	public void setHeightInINches(Integer heightInINches)
-		{ this.heightInINches = heightInINches;	}
+	public void setHeightInInches(Integer heightInInches)
+		{ this.heightInInches = heightInInches;	}
 
 	public Races getRace( )
-		{ return Race;	}
+		{ return race;	}
 
 	public void setRace(Races race)
-		{ Race = race;	}
+		{ this.race = race;	}
 
 	public Genders getGender( )
-		{ return gender;	}
+		{ return gender; }
 
 	public void setGender(Genders gender)
 		{ this.gender = gender; }
+
+	public EyeColors getEyeColor() 
+		{ return eyeColor; }
+
+	public void setEyeColor(EyeColors eyeColor) 
+		{ this.eyeColor = eyeColor;	}
+
+	public HairColors getHairColor() 
+		{ return hairColor;	}
+
+	public void setHairColor(HairColors hairColor) 
+		{ this.hairColor = hairColor; }
 	
 
 /* ------------------------------ End Getters & Setters  ------------------------------ */
