@@ -150,8 +150,9 @@ public class StringUtils
 	 * @param pad_str		- the padding string
 	 * @param doTrim_bln	- boolean trim the spaces or not
 	 * @return				- value_str left padded(pad_str X length_int) + value_str characters
-	 * 
-	 * Example: leftPad( " Hi There ", 2, "-", false) = -- Hi There
+	 * <br><br>
+	 * Example: leftPad( " Hi There ", 2, "@", false) <br>
+	 *   = @@ Hi There
 	 */
 	public static String leftPad( String value_str, int length_int, String pad_str, boolean doTrim_bln)
 		{ if ( value_str != null)
@@ -170,8 +171,9 @@ public class StringUtils
 	 * @param pad_str		- the padding string
 	 * @param doTrim_bln	- trim the spaces or not
 	 * @return				- value_str right padded(pad_str X length_int) + value_str characters
-	 * 
-	 * Example: rightPad( " Hi There ", 2, "-", false) = Hi There -- 
+	 * <br><br>
+	 * Example: rightPad( " Hi There ", 2, "@", false) <br>
+	 *   = Hi There @@ 
 	 */
 	public static String rightPad( String value_str, int length_int, String pad_str, boolean doTrim_bln)
 		{ if ( value_str != null)
