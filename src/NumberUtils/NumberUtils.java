@@ -26,19 +26,19 @@ public class NumberUtils
 		// 			Currency Formatting
 
 		
-		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(23.0123456)));
-		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(23.01477456)));
-		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(23.01577456)));
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.0123456)));
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.01477456)));
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.01577456)));
 		
 		
 		double number = 1234567.123456;
 	    NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.ITALIAN);
 	    String numberAsString = numberFormat.format(number);
-	    System.out.println(numberAsString);
+	    System.out.println("Italian Format: " + numberAsString);
 	    
 	    numberFormat = NumberFormat.getNumberInstance(Locale.US);
 	    numberAsString = numberFormat.format(number);
-	    System.out.println(numberAsString);
+	    System.out.println("US Format: " + numberAsString);
 	    
 	    numberAsString = String.format("%,d", 1234567);
 	    System.out.println(numberAsString);
@@ -90,7 +90,7 @@ public class NumberUtils
 			if ( src != null )
 				return src.setScale( DEFAULT_NUMERIC_SCALE, RoundingMode.HALF_EVEN );
 	
-			return null;
+			return null; // or should it return BigDecimal.ZERO ?
 		}
 	
 	public static BigDecimal toWholePercent( BigDecimal src )
