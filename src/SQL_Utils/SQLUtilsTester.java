@@ -2,6 +2,7 @@ package SQL_Utils;
 
 public class SQLUtilsTester 
 {
+	// this class is just for testing and demonstrating the functionality of the SQLUtils class
 
 	public static void main(String[] args) 
 		{
