@@ -1,4 +1,4 @@
-package SQL_Utils;
+package DB_Utils;
 
 public class SQLUtilsTester 
 {
