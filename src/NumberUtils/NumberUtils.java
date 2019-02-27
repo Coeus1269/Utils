@@ -28,10 +28,11 @@ public class NumberUtils
 		// 			Currency Formatting
 
 		
-		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.0123456)));
+		// Demonstration of rounding, only rounds based on first decimal place not displayed.
+		// they do not roll up
 		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.01477456)));
+		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.015)));
 		System.out.println(NumberUtils.BigToCurrencyString(new BigDecimal(2346.01577456)));
-		
 		
 		double number = 1234567.123456;
 	    NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.ITALIAN);
@@ -40,14 +41,14 @@ public class NumberUtils
 	    
 	    numberFormat = NumberFormat.getNumberInstance(Locale.US);
 	    numberAsString = numberFormat.format(number);
-	    System.out.println("US Format: " + numberAsString);
+	    System.out.println("US Format:\t" + numberAsString);
 	    
 	    numberAsString = String.format("%,d", 1234567);
-	    System.out.println(numberAsString);
+	    System.out.println("Formatted:\t" + numberAsString);
 	    
 	    DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
 	    numberAsString = decimalFormat.format(number);
-	    System.out.println(numberAsString);
+	    System.out.println("Formatted:\t" + numberAsString);
 	
 		}
 	
