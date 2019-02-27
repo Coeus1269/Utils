@@ -3,6 +3,7 @@ package SQL_Utils;
 public class SQLUtils
     {
 	// TODO: method that takes a table as input and pulls the column info for testing data type, size etc.
+	private String Version_str = "1.23";
 	
     public static String SQLSafeString(String SQL_str)
         {// replaces single quote to work in MS SQL.
@@ -33,4 +34,11 @@ public class SQLUtils
 
         return SQLSelect_str + Values_str;
         }
+    
+    /* -------------------------------- Getters & Setters  -------------------------------- */
+
+   public String getVersion()
+   	{ return Version_str; 	}
+
+    /* ------------------------------ End Getters & Setters  ------------------------------ */
     }

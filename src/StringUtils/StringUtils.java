@@ -14,9 +14,8 @@ import java.net.URLEncoder ;
 
 public class StringUtils
 {
-	public String Version_str = "1.230";
-	
-	
+	private String Version_str = "1.230";
+		
 	public static void main( String...args )
 		{ 	// Self Tester
 			System.out.println( "encodeURIComponent: " +encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
@@ -369,11 +368,12 @@ public class StringUtils
 
 
 	
-	/* -------------------------------- Getters & Setters  -------------------------------- */
+    /* -------------------------------- Getters & Setters  -------------------------------- */
 
+   public String getVersion()
+   	{ return Version_str; 	}
 
-
-	/* ------------------------------ End Getters & Setters  ------------------------------ */
+    /* ------------------------------ End Getters & Setters  ------------------------------ */
 }
 
 

@@ -16,6 +16,8 @@ public class NumberUtils
 	
 	public static final int	PRESENTATION_CURRENCY_SCALE	= 2;
 	
+	private String Version_str = "1.23";
+	
 	
 	public static void main(String[] args) 
 		{
@@ -132,6 +134,11 @@ public class NumberUtils
 	    	}
 	    	return true;
 	    }
+    /* -------------------------------- Getters & Setters  -------------------------------- */
 
+   public String getVersion()
+   	{ return Version_str; 	}
+
+    /* ------------------------------ End Getters & Setters  ------------------------------ */
 
 }

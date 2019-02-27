@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class DateUtils 
 {
-	public String Version_str = "1.230";
+	private String Version_str = "1.230";
 	
 	private static DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
 	private static DateFormat dateTimeFormat = new SimpleDateFormat("YYYY-MM-dd hh:mm");

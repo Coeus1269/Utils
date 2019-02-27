@@ -12,7 +12,7 @@ public class EmailUtils
 	// TODO check for more that one @
 	// test domain type i.e. .com .org etc
 	
-	public String Version_str = "1.230";
+	private String Version_str = "1.230";
 	
 	public static void main(String[] args)
 	{
@@ -49,6 +49,9 @@ public class EmailUtils
 	public String getEmailUsername( )
 		{ return  eMail_str.substring(0, eMail_str.indexOf("@") );	}
 
-	/* ------------------------------ End Getters & Setters  ------------------------------ */
+   public String getVersion()
+   		{ return Version_str; 	}
+
+    /* ------------------------------ End Getters & Setters  ------------------------------ */
 	
 	}

@@ -187,7 +187,11 @@ public class Person
 	public void setHairColor(HairColors hairColor) 
 		{ this.hairColor = hairColor; }
 	
+    /* -------------------------------- Getters & Setters  -------------------------------- */
 
-/* ------------------------------ End Getters & Setters  ------------------------------ */
+   public String getVersion()
+   		{ return Version_str; 	}
+
+    /* ------------------------------ End Getters & Setters  ------------------------------ */
 	
 }

@@ -27,7 +27,7 @@ People Utils - a collection of common Name parsing and handling methods <br>
 Locale Utils - a collection of common Locale parsing and handling methods
 
 
-Phone Utils - a collection of common Phone Number processing and handling methods <br>
+Phone Utils - a collection of common Phone Number processing and handling methods  - Built in Java 1.7 - Current version: 1.23<br>
   Dependency on: StringUtils
   
   
