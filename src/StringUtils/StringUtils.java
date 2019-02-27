@@ -18,18 +18,18 @@ public class StringUtils
 		
 	public static void main( String...args )
 		{ 	// Self Tester
-			System.out.println( "encodeURIComponent: " +encodeURIComponent( "http://someserver.org/lost+found/file with spaces and a ?" ));
-			System.out.println("\"Hello\" & GoodBye <> \n   to HTML: " + toHTML("\"Hello\" & GoodBye <> \n"));
-			System.out.println("tEsTing TiTle cASE = " + toTitleCase("tEsTing TiTle cASE"));
-			System.out.println("Left Pad  X: " + leftPad(" Kisses ", 3, "X", false));
-			System.out.println("Right Pad O: " + rightPad("Hugs ", 3, "O", false));
-			System.out.println("Strip ass from assassin: " + stripLeading("assassin","ass"));
-			System.out.println("Camel case and_Squish : " + camelCaseSquish("Camel Case and Squish"));
+			System.out.println( "encodeURIComponent: " + StringUtils.encodeURIComponent( "http://someserver.org/lost&found+Other/file with spaces and a ?" ));
+			System.out.println("\"Hello\" & GoodBye <> \n   to HTML: " + StringUtils.toHTML("\"Hello\" & GoodBye <> \n"));
+			System.out.println("tEsTing TiTle cASE = " + StringUtils.toTitleCase("tEsTing TiTle cASE"));
+			System.out.println("Left Pad  X: " + StringUtils.leftPad(" Kisses ", 3, "X", false));
+			System.out.println("Right Pad O: " + StringUtils.rightPad("Hugs ", 3, "O", false));
+			System.out.println("Strip ass from assassin: " + StringUtils.stripLeading("assassin","ass"));
+			System.out.println("Camel case and_Squish : " + StringUtils.camelCaseSquish("Camel Case and Squish"));
 			System.out.println("");
 			System.out.println("Test input for the following =  W-3!@23 this way");
-			System.out.println("LettersSpacesDigitsOnly :  = " + LettersSpacesDigitsOnly("W-3!@23 this way"));
-			System.out.println("removeNonDigits         :  = " + removeNonDigits("W-3!@23 this way"));
-			System.out.println("removeDigits            :  = " + removeDigits("W-3!@23 this way"));
+			System.out.println("LettersSpacesDigitsOnly :  = " + StringUtils.LettersSpacesDigitsOnly("W-3!@23 this way"));
+			System.out.println("removeNonDigits         :  = " + StringUtils.removeNonDigits("W-3!@23 this way"));
+			System.out.println("removeDigits            :  = " + StringUtils.removeDigits("W-3!@23 this way"));
 		}
 	
 //	public static String removePunctuation(final String str) 
@@ -108,6 +108,16 @@ public class StringUtils
 			return result;
 		}
 	
+	
+	/**
+	 * @param value_str
+	 * @return if value_str = null or empty returns empty string else - returns value_str trimmed
+	 */
+	public static String safeTrimEmpty( String value_str )
+		{ 	value_str = safeTrimNull( value_str );
+			return ( value_str == null ? "" : value_str );
+		}
+	
 	/**
 	 * @param value_str
 	 * @return if value_str = null or empty returns - null else returns value_str trimmed
@@ -124,14 +134,7 @@ public class StringUtils
 	   	return value_str;
 	   }
 	
-	/**
-	 * @param value_str
-	 * @return if value_str = null or empty returns empty string else - returns value_str trimmed
-	 */
-	public static String safeTrimEmpty( String value_str )
-		{ 	value_str = safeTrimNull( value_str );
-			return ( value_str == null ? "" : value_str );
-		}
+
 	
 	/**
 	 * @param value_str
