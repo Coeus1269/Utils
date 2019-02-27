@@ -32,3 +32,13 @@ Phone Utils - a collection of common Phone Number processing and handling method
   
   
 Number Utils - a collection of common Number parsing and handling methods
+
+
+Database Utilities - Built in Java 1.7 - Current version: 1.23<br>
+  Dependency on: mysql-connector-java-5.1.47.jar
+
+DBconnectMySQL - simplified MySQL database connector and query execution, with minimal dependencies on javax.sql, java.sql and com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource. Also uses connection pooling
+
+RSToConsole - a java class to display a record set to the console in various formats for assisting in trouble shooting
+
+
